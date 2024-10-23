@@ -46,7 +46,7 @@
             label6.BackColor = Color.Transparent;
             label6.FlatStyle = FlatStyle.Popup;
             label6.Font = new Font("Lucida Handwriting", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(274, 27);
             label6.Name = "label6";
             label6.Size = new Size(313, 63);
@@ -79,18 +79,24 @@
             // 
             // Biblioteca
             // 
-            Biblioteca.Location = new Point(63, 121);
+            Biblioteca.BackColor = Color.Transparent;
+            Biblioteca.Image = (Image)resources.GetObject("Biblioteca.Image");
+            Biblioteca.Location = new Point(63, 93);
             Biblioteca.Name = "Biblioteca";
-            Biblioteca.Size = new Size(197, 132);
+            Biblioteca.Size = new Size(197, 160);
+            Biblioteca.SizeMode = PictureBoxSizeMode.StretchImage;
             Biblioteca.TabIndex = 11;
             Biblioteca.TabStop = false;
             Biblioteca.Click += Biblioteca_Click;
             // 
             // Lector
             // 
-            Lector.Location = new Point(323, 121);
+            Lector.BackColor = Color.Transparent;
+            Lector.Image = (Image)resources.GetObject("Lector.Image");
+            Lector.Location = new Point(323, 93);
             Lector.Name = "Lector";
-            Lector.Size = new Size(215, 132);
+            Lector.Size = new Size(215, 160);
+            Lector.SizeMode = PictureBoxSizeMode.StretchImage;
             Lector.TabIndex = 12;
             Lector.TabStop = false;
             Lector.Click += Lector_Click;

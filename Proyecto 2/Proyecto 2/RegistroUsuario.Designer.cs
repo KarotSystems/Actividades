@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuario));
             label2 = new Label();
             label1 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtContraseña = new TextBox();
+            txtUsuario = new TextBox();
             label6 = new Label();
             label3 = new Label();
+            pictureBox1 = new PictureBox();
+            Registro = new Button();
+            RpLector = new RadioButton();
+            RpBiblio = new RadioButton();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -56,19 +62,19 @@
             label1.TabIndex = 6;
             label1.Text = "Usuario";
             // 
-            // textBox2
+            // txtContraseña
             // 
-            textBox2.Location = new Point(12, 214);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(220, 23);
-            textBox2.TabIndex = 5;
+            txtContraseña.Location = new Point(12, 214);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(231, 23);
+            txtContraseña.TabIndex = 5;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(12, 157);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(217, 23);
-            textBox1.TabIndex = 4;
+            txtUsuario.Location = new Point(12, 157);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(231, 23);
+            txtUsuario.TabIndex = 4;
             // 
             // label6
             // 
@@ -82,7 +88,6 @@
             label6.Size = new Size(231, 90);
             label6.TabIndex = 9;
             label6.Text = "Libreria\r\nSan Pedro";
-            label6.Click += label6_Click;
             // 
             // label3
             // 
@@ -97,20 +102,72 @@
             label3.TabIndex = 10;
             label3.Text = "Libreria\r\nSan Pedro";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(291, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(251, 215);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
             // Registro
+            // 
+            Registro.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Registro.Location = new Point(393, 243);
+            Registro.Name = "Registro";
+            Registro.Size = new Size(149, 49);
+            Registro.TabIndex = 12;
+            Registro.Text = "Registrar";
+            Registro.UseVisualStyleBackColor = true;
+            Registro.Click += Registro_Click;
+            // 
+            // RpLector
+            // 
+            RpLector.AutoSize = true;
+            RpLector.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RpLector.Location = new Point(12, 253);
+            RpLector.Name = "RpLector";
+            RpLector.Size = new Size(83, 29);
+            RpLector.TabIndex = 13;
+            RpLector.TabStop = true;
+            RpLector.Text = "Lector";
+            RpLector.UseVisualStyleBackColor = true;
+            // 
+            // RpBiblio
+            // 
+            RpBiblio.AutoSize = true;
+            RpBiblio.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RpBiblio.Location = new Point(106, 253);
+            RpBiblio.Name = "RpBiblio";
+            RpBiblio.Size = new Size(137, 29);
+            RpBiblio.TabIndex = 14;
+            RpBiblio.TabStop = true;
+            RpBiblio.Text = "Bibliotecario";
+            RpBiblio.UseVisualStyleBackColor = true;
+            // 
+            // RegistroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 192, 128);
+            BackColor = Color.FromArgb(39, 191, 230);
             ClientSize = new Size(576, 304);
+            Controls.Add(RpBiblio);
+            Controls.Add(RpLector);
+            Controls.Add(Registro);
+            Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label6);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Name = "Registro";
+            Controls.Add(txtContraseña);
+            Controls.Add(txtUsuario);
+            Name = "RegistroUsuario";
             Text = "Registro";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -119,9 +176,13 @@
 
         private Label label2;
         private Label label1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtContraseña;
+        private TextBox txtUsuario;
         private Label label6;
         private Label label3;
+        private PictureBox pictureBox1;
+        private Button Registro;
+        private RadioButton RpLector;
+        private RadioButton RpBiblio;
     }
 }

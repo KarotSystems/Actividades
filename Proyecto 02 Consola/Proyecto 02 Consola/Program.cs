@@ -7,17 +7,20 @@ class Program
         Bibliotecario bibliotecario = new Bibliotecario("Mario", "A001");
         Lector lector = new Lector("Pedro", "L001");
         bool salir = false;
-
-        while (!salir)
+        string opciones;
+        do
         {
-            Console.WriteLine("-- Biblioteca Undertale --");
-            Console.WriteLine("1. Agregar Libro");
-            Console.WriteLine("2. Buscar Libro");
-            Console.WriteLine("3. Eliminar Libro");
-            Console.WriteLine("4. Solicitar Préstamo");
-            Console.WriteLine("5. Devolver Libro");
-            Console.WriteLine("6. Agregar usuario");
-            Console.WriteLine("7. Salir");
+            Console.WriteLine("╔═════════════════════════════════════════════╗");
+            Console.WriteLine("║               BIBLIOTECA UNDERTALE          ║");
+            Console.WriteLine("║        1) Agregar Libro                     ║");
+            Console.WriteLine("║        2) Buscar Libro                      ║");
+            Console.WriteLine("║        3) Eliminar Libro                    ║");
+            Console.WriteLine("║        4) Solicitar Préstamo                ║");
+            Console.WriteLine("║        5) Devolver Libro                    ║");
+            Console.WriteLine("║        6) Agregar usuario                   ║");
+            Console.WriteLine("║        7) Salir                             ║");
+            Console.WriteLine("╚═════════════════════════════════════════════╝");
+            Console.WriteLine(" ");
             Console.Write("Seleccione una opción: ");
             int opcion = Convert.ToInt32(Console.ReadLine());
             switch (opcion)
@@ -25,7 +28,10 @@ class Program
                 case 1:
                     {
                         Console.WriteLine(" ");
-                        Console.WriteLine("Ha seleccionado la primera opcion");
+                        Console.WriteLine("╔════════════════════════╗");
+                        Console.WriteLine("║     Agregar Libro      ║");
+                        Console.WriteLine("╚════════════════════════╝");
+                        Console.WriteLine(" ");
                         Console.Write("Ingrese el titulo: ");
                         string titulo = Console.ReadLine();
                         Console.Write("Ingrese el autor: ");
@@ -42,8 +48,15 @@ class Program
                 case 2:
                     {
                         Console.WriteLine(" ");
-                        Console.WriteLine("Ha seleccionado la segunda opcion");
-                        Console.WriteLine("Que opcion le resulta mas facil? ");
+                        Console.WriteLine("╔════════════════════════╗");
+                        Console.WriteLine("║      Buscar Libro      ║");
+                        Console.WriteLine("╚════════════════════════╝");
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+                        Console.WriteLine("╔════════════════════════════════════════════╗");
+                        Console.WriteLine("║     ¿Que opcion le resulta mas facil?      ║");
+                        Console.WriteLine("╚════════════════════════════════════════════╝");
+                        Console.WriteLine(" ");
                         Console.WriteLine("1) Buscar por titulo");
                         Console.WriteLine("2) Buscar por ISBN");
                         Console.Write("Seleccione una opción: ");
@@ -72,6 +85,10 @@ class Program
                 case 3:
                     {
                         Console.WriteLine(" ");
+                        Console.WriteLine("╔═════════════════════════╗");
+                        Console.WriteLine("║     Eliminar Libro      ║");
+                        Console.WriteLine("╚═════════════════════════╝");
+                        Console.WriteLine(" ");
                         Console.Write("Ingrese el ISBN del libro que desea eliminar: ");
                         string eliminarISBN = Console.ReadLine();
                         biblioteca.EliminarLibro(biblioteca, eliminarISBN);
@@ -79,6 +96,10 @@ class Program
                     }
                 case 4:
                     {
+                        Console.WriteLine(" ");
+                        Console.WriteLine("╔═════════════════════════════╗");
+                        Console.WriteLine("║     Solicitar Préstamo      ║");
+                        Console.WriteLine("╚═════════════════════════════╝");
                         Console.WriteLine(" ");
                         Console.Write("Ingrese el ISBN del libro que desea solicitar: ");
                         string prestamoISBN = Console.ReadLine();
@@ -88,6 +109,10 @@ class Program
                 case 5:
                     {
                         Console.WriteLine(" ");
+                        Console.WriteLine("╔═════════════════════════╗");
+                        Console.WriteLine("║     Devolver Libro      ║");
+                        Console.WriteLine("╚═════════════════════════╝");
+                        Console.WriteLine(" ");
                         Console.WriteLine("Ingrese el ISBN del libro que desea devolver:");
                         string devolucionISBN = Console.ReadLine();
                         biblioteca.DevolverLibro(devolucionISBN);
@@ -95,7 +120,16 @@ class Program
                     }
                 case 6:
                     {
-                        //codigo para meter nuevos lectores
+                        Console.WriteLine(" ");
+                        Console.WriteLine("╔══════════════════════════╗");
+                        Console.WriteLine("║     Agregar usuario      ║");
+                        Console.WriteLine("╚══════════════════════════╝");
+                        Console.WriteLine(" ");
+                        Console.Write("Ingrese el Nombre: ");
+                        string nombre = Console.ReadLine();
+                        Console.Write("Ingrese el ID: ");
+                        string ID = Console.ReadLine();
+                        Usuario.GuardarUsuario(nombre, ID);
                         break;
                     }
                 case 7:
@@ -110,6 +144,20 @@ class Program
                         break;
                     }
             }
-        }
+            if (!salir)
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("╔═════════════════════════════════════════╗");
+                Console.WriteLine("║   ¿Desea realizar otra operación? S/N   ║");
+                Console.WriteLine("╚═════════════════════════════════════════╝");
+                Console.WriteLine(" ");
+                opciones = Convert.ToString(Console.ReadLine().ToUpper());
+                if (opciones != "S" && opciones != "SI")
+                {
+                    salir = true;
+                }
+                Console.Clear();
+            }
+        } while (!salir);
     }
 }

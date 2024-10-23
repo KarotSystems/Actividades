@@ -6,19 +6,16 @@ namespace Proyecto_2
         {
             InitializeComponent();
         }
-
         private void Biblioteca_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form bibliotecario = new Form();
-            bibliotecario.Show();
+            Usuario Usuario = new Usuario();
+            Usuario.Show();
         }
 
         private void Lector_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form lector = new Form();
-            lector.Show();
+            Usuario Usuario = new Usuario();
+            Usuario.Show();
         }
     }
 }

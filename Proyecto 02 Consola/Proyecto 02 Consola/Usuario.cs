@@ -15,6 +15,13 @@ namespace Proyecto_02_Consola
             Nombre = nombre;
             Id = id;
         }
+        public static List<Usuario> listaUsuarios = new List<Usuario>();
+        public static void GuardarUsuario(string nombre, string ID)
+        {
+            Usuario nuevoUsuario = new Usuario(nombre, ID);
+            listaUsuarios.Add(nuevoUsuario);
+            Console.WriteLine("Nuevo usuario agregago con éxito");
+        }
         public void MostrarInformacion()
         {
             Console.WriteLine($"Nombre: {Nombre}, ID: {Id}");
