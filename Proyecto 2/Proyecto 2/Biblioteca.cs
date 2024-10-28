@@ -17,7 +17,7 @@ namespace Proyecto_2
             if (!inventario.Exists(libro => libro.ISBN == isbn))
             {
                 inventario.Add(new Libro(titulo, autor, isbn, genero));
-                Console.WriteLine($"Libro {titulo} agregado correctamente.");
+                MessageBox.Show($"Libro {titulo} agregado correctamente.", "Informacion", MessageBoxButtons.OK);
             }
             else
             {

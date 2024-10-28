@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_2
 {
-    public partial class lector : Form
+    public partial class BuscarLib : Form
     {
-        public lector()
+        public BuscarLib()
         {
             InitializeComponent();
         }

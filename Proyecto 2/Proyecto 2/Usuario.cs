@@ -29,12 +29,12 @@ namespace Proyecto_2
                 inicio.Close();
                 if (usuarioAutenticado.Rol == "Lector")
                 {     
-                    lector lectorForm = new lector();
+                    Menu lectorForm = new Menu();
                     lectorForm.Show();
                 }
                 else if (usuarioAutenticado.Rol == "Bibliotecario")
                 {
-                    Menu biblioForm = new Menu();
+                    MenuBiblio biblioForm = new MenuBiblio();
                     biblioForm.Show();
                 }
                 this.Hide();

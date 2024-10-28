@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_2
 {
-    public partial class Eliminar_EditarUsuario : Form
+    public partial class GestionUsuarios : Form
     {
-        public Eliminar_EditarUsuario()
+        public GestionUsuarios()
         {
             InitializeComponent();
         }

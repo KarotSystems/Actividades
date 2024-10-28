@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_2
 {
-    partial class Eliminar_EditarUsuario
+    partial class GestionUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // Eliminar_EditarUsuario
+            // GestionUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(475, 327);
-            Name = "Eliminar_EditarUsuario";
-            Text = "Eliminar_EditarUsuario";
+            ClientSize = new Size(445, 311);
+            Name = "GestionUsuarios";
+            Text = "GestionUsuarios";
             ResumeLayout(false);
         }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_2
 {
-    public partial class Biblotecario : Form
+    public partial class Libreria : Form
     {
-        public Biblotecario()
+        public Libreria()
         {
             InitializeComponent();
         }

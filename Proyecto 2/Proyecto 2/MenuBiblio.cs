@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace Proyecto_2
 {
-    public partial class Menu : Form
+    public partial class MenuBiblio : Form
     {
-        public Menu()
+        public MenuBiblio()
         {
             InitializeComponent();
         }
-
         private void libreria_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -36,6 +35,16 @@ namespace Proyecto_2
             this.Hide();
             GestionUsuarios gestion = new GestionUsuarios();
             gestion.Show();
+        }
+        private void Modulopretamos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Prestamos preta = new Prestamos();
+            preta.Show();
+        }
+        private void Biblotecario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

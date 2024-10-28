@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_2
 {
-    partial class eliminarLibro
+    partial class BuscarLib
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             SuspendLayout();
             // 
-            // eliminarLibro
+            // BuscarLib
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(593, 339);
-            Name = "eliminarLibro";
-            Text = "eliminarLibro";
+            ClientSize = new Size(571, 319);
+            Name = "BuscarLib";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "BuscarLib";
             ResumeLayout(false);
         }
 

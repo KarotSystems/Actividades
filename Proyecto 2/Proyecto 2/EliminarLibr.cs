@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_2
 {
-    public partial class agregarLibro : Form
+    public partial class EliminarLibr : Form
     {
-        public agregarLibro()
+        public EliminarLibr()
         {
             InitializeComponent();
         }
