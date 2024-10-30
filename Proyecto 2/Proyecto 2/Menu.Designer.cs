@@ -32,10 +32,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            buscar = new Label();
-            gestionuser = new Label();
+            Presta = new Label();
             libreria = new Label();
-            Modulopretamos = new Label();
+            Salir = new Label();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -71,29 +70,17 @@
             label3.Size = new Size(0, 25);
             label3.TabIndex = 2;
             // 
-            // buscar
+            // Presta
             // 
-            buscar.AutoSize = true;
-            buscar.BackColor = Color.Transparent;
-            buscar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            buscar.Location = new Point(18, 90);
-            buscar.Name = "buscar";
-            buscar.Size = new Size(170, 30);
-            buscar.TabIndex = 3;
-            buscar.Text = "2) Buscar Libro";
-            buscar.Click += buscar_Click;
-            // 
-            // gestionuser
-            // 
-            gestionuser.AutoSize = true;
-            gestionuser.BackColor = Color.Transparent;
-            gestionuser.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            gestionuser.Location = new Point(18, 134);
-            gestionuser.Name = "gestionuser";
-            gestionuser.Size = new Size(244, 30);
-            gestionuser.TabIndex = 4;
-            gestionuser.Text = "3) Gestion de Usuarios";
-            gestionuser.Click += gestionuser_Click;
+            Presta.AutoSize = true;
+            Presta.BackColor = Color.Transparent;
+            Presta.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            Presta.Location = new Point(18, 116);
+            Presta.Name = "Presta";
+            Presta.Size = new Size(261, 30);
+            Presta.TabIndex = 3;
+            Presta.Text = "2) Gestión de Préstamos";
+            Presta.Click += Presta_Click;
             // 
             // libreria
             // 
@@ -101,23 +88,24 @@
             libreria.BackColor = Color.Transparent;
             libreria.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             libreria.ForeColor = SystemColors.ControlText;
-            libreria.Location = new Point(18, 42);
+            libreria.Location = new Point(18, 64);
             libreria.Name = "libreria";
-            libreria.Size = new Size(123, 30);
+            libreria.Size = new Size(220, 30);
             libreria.TabIndex = 5;
-            libreria.Text = "1) Libreria";
+            libreria.Text = "1) Gestión de Libros";
             libreria.Click += libreria_Click;
             // 
-            // Modulopretamos
+            // Salir
             // 
-            Modulopretamos.AutoSize = true;
-            Modulopretamos.BackColor = Color.Transparent;
-            Modulopretamos.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            Modulopretamos.Location = new Point(18, 179);
-            Modulopretamos.Name = "Modulopretamos";
-            Modulopretamos.Size = new Size(247, 30);
-            Modulopretamos.TabIndex = 6;
-            Modulopretamos.Text = "4) Modulo de pretamos";
+            Salir.AutoSize = true;
+            Salir.BackColor = Color.Transparent;
+            Salir.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            Salir.Location = new Point(18, 171);
+            Salir.Name = "Salir";
+            Salir.Size = new Size(233, 30);
+            Salir.TabIndex = 6;
+            Salir.Text = "3) Salir del Programa";
+            Salir.Click += Salir_Click;
             // 
             // pictureBox1
             // 
@@ -137,10 +125,9 @@
             BackColor = Color.FromArgb(39, 131, 230);
             ClientSize = new Size(550, 238);
             Controls.Add(pictureBox1);
-            Controls.Add(Modulopretamos);
+            Controls.Add(Salir);
             Controls.Add(libreria);
-            Controls.Add(gestionuser);
-            Controls.Add(buscar);
+            Controls.Add(Presta);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -157,10 +144,9 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label buscar;
-        private Label gestionuser;
+        private Label Presta;
         private Label libreria;
-        private Label Modulopretamos;
+        private Label Salir;
         private PictureBox pictureBox1;
     }
 }

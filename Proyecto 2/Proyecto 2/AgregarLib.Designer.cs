@@ -135,12 +135,13 @@
             // btnEditar
             // 
             btnEditar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            btnEditar.Location = new Point(149, 265);
+            btnEditar.Location = new Point(160, 265);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(113, 73);
             btnEditar.TabIndex = 20;
             btnEditar.Text = "Editar Libro";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAgregar
             // 
@@ -155,12 +156,11 @@
             // 
             // rchtxtLibros
             // 
-            rchtxtLibros.Location = new Point(313, 6);
+            rchtxtLibros.Location = new Point(296, 6);
             rchtxtLibros.Name = "rchtxtLibros";
-            rchtxtLibros.Size = new Size(229, 324);
+            rchtxtLibros.Size = new Size(246, 324);
             rchtxtLibros.TabIndex = 18;
             rchtxtLibros.Text = "";
-            rchtxtLibros.TextChanged += rchtxtLibros_TextChanged;
             // 
             // Txttitulo
             // 
@@ -219,6 +219,7 @@
             Name = "AgregarLib";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgregarLib";
+            MouseClick += AgregarLib_MouseClick;
             ResumeLayout(false);
             PerformLayout();
         }

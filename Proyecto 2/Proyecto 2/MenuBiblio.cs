@@ -19,7 +19,7 @@ namespace Proyecto_2
         private void libreria_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Libreria agregarLibro = new Libreria();
+            AgregarLib agregarLibro = new AgregarLib();
             agregarLibro.Show();
         }
 
@@ -33,7 +33,7 @@ namespace Proyecto_2
         private void gestionuser_Click(object sender, EventArgs e)
         {
             this.Hide();
-            GestionUsuarios gestion = new GestionUsuarios();
+            RegistroUsuario gestion = new RegistroUsuario();
             gestion.Show();
         }
         private void Modulopretamos_Click(object sender, EventArgs e)
@@ -45,6 +45,11 @@ namespace Proyecto_2
         private void Biblotecario_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

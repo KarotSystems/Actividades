@@ -24,18 +24,16 @@ namespace Proyecto_2
             agregarLibro.Show();
         }
 
-        private void buscar_Click(object sender, EventArgs e)
+        private void Presta_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BuscarLib buscarlb = new BuscarLib();
-            buscarlb.Show();
+            Prestamos pres = new Prestamos();
+            pres.Show();
         }
 
-        private void gestionuser_Click(object sender, EventArgs e)
+        private void Salir_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            GestionUsuarios gestion = new GestionUsuarios();
-            gestion.Show();
+            this.Close();
         }
     }
 }

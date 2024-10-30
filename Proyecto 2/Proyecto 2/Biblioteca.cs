@@ -8,20 +8,39 @@ namespace Proyecto_2
 {
     public class Biblioteca
     {
-        private List<Libro> inventario = new List<Libro>();
-        private List<Usuario> usuarios = new List<Usuario>();
-        private List<Prestamo> prestamos = new List<Prestamo>();
-        private Queue<Lector> listaDeEspera = new Queue<Lector>();
-        public void AgregarLibro(List<Libro> inventario, string titulo, string autor, string isbn, string genero)
+        private static Biblioteca instancia;
+
+        public List<Libro> inventario = new List<Libro>();
+        public List<Usuario> usuarios = new List<Usuario>();
+        public List<Prestamo> prestamos = new List<Prestamo>();
+        public Queue<Lector> listaDeEspera = new Queue<Lector>();
+
+        // Propiedad para retornar informacion
+        public static Biblioteca Instancia
+        {
+            get
+            {
+                if (instancia == null)
+                {
+                    instancia = new Biblioteca();
+                }
+                return instancia;
+            }
+        }
+
+        private Biblioteca() { } // Constructor privado para evitar instancias adicionales
+
+        // Métodos de Biblioteca (AgregarLibro, EliminarLibro, etc.)
+        public void AgregarLibro(string titulo, string autor, string isbn, string genero, bool disponible)
         {
             if (!inventario.Exists(libro => libro.ISBN == isbn))
             {
-                inventario.Add(new Libro(titulo, autor, isbn, genero));
-                MessageBox.Show($"Libro {titulo} agregado correctamente.", "Informacion", MessageBoxButtons.OK);
+                inventario.Add(new Libro(titulo, autor, isbn, genero) { Disponible = disponible });
+                MessageBox.Show($"Libro {titulo} agregado correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Console.WriteLine("Error: ISBN ya registrado.");
+                MessageBox.Show("Error: ISBN ya registrado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -31,26 +50,11 @@ namespace Proyecto_2
             if (libro != null)
             {
                 inventario.Remove(libro);
-                Console.WriteLine($"Libro con ISBN {isbn} eliminado correctamente.");
+                MessageBox.Show($"Libro con ISBN {isbn} eliminado correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Console.WriteLine("Error: Libro no encontrado.");
-            }
-        }
-        public void EditarLibro(List<Libro> inventario, string isbn, string nuevoTitulo, string nuevoAutor, string nuevoGenero)
-        {
-            var libro = inventario.Find(l => l.ISBN == isbn);
-            if (libro != null)
-            {
-                libro.Titulo = nuevoTitulo;
-                libro.Autor = nuevoAutor;
-                libro.Genero = nuevoGenero;
-                Console.WriteLine("Libro editado correctamente.");
-            }
-            else
-            {
-                Console.WriteLine("Error: Libro no encontrado.");
+                MessageBox.Show("Error: Libro no encontrado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void SolicitarPrestamo(Lector lector, string isbn)
@@ -60,16 +64,16 @@ namespace Proyecto_2
             {
                 libro.Disponible = false;
                 prestamos.Add(new Prestamo(lector, libro));
-                Console.WriteLine($"Préstamo del libro {libro.Titulo} registrado.");
+                MessageBox.Show($"Préstamo del libro {libro.Titulo} registrado.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (libro != null && !libro.Disponible)
             {
                 listaDeEspera.Enqueue(lector);
-                Console.WriteLine($"Libro {libro.Titulo} no disponible. {lector.Usuario} añadido a la lista de espera.");
+                MessageBox.Show($"Libro {libro.Titulo} no disponible. {lector.Usuario} añadido a la lista de espera.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Console.WriteLine("Libro no encontrado.");
+                MessageBox.Show("Libro no encontrado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void DevolverLibro(Lector lector, string isbn)
@@ -89,14 +93,14 @@ namespace Proyecto_2
             }
             else
             {
-                Console.WriteLine("Préstamo no encontrado o libro ya devuelto.");
+                MessageBox.Show("Préstamo no encontrado o libro ya devuelto.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         public void MostrarLibros()
         {
             if (inventario.Count == 0)
             {
-                Console.WriteLine("No hay libros en el inventario.");
+                MessageBox.Show("No hay libros en el inventario.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -110,7 +114,7 @@ namespace Proyecto_2
         {
             if (prestamos.Count == 0)
             {
-                Console.WriteLine("No hay préstamos activos.");
+                MessageBox.Show("No hay préstamos activos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

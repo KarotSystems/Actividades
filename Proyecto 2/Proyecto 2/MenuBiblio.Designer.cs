@@ -35,6 +35,7 @@
             gestionuser = new Label();
             buscar = new Label();
             label2 = new Label();
+            Salir = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             Modulopretamos.AutoSize = true;
             Modulopretamos.BackColor = Color.Transparent;
             Modulopretamos.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            Modulopretamos.Location = new Point(34, 192);
+            Modulopretamos.Location = new Point(9, 162);
             Modulopretamos.Name = "Modulopretamos";
             Modulopretamos.Size = new Size(247, 30);
             Modulopretamos.TabIndex = 12;
@@ -67,7 +68,7 @@
             libreria.BackColor = Color.Transparent;
             libreria.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             libreria.ForeColor = SystemColors.ControlText;
-            libreria.Location = new Point(34, 55);
+            libreria.Location = new Point(12, 35);
             libreria.Name = "libreria";
             libreria.Size = new Size(123, 30);
             libreria.TabIndex = 11;
@@ -79,7 +80,7 @@
             gestionuser.AutoSize = true;
             gestionuser.BackColor = Color.Transparent;
             gestionuser.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            gestionuser.Location = new Point(34, 147);
+            gestionuser.Location = new Point(12, 119);
             gestionuser.Name = "gestionuser";
             gestionuser.Size = new Size(244, 30);
             gestionuser.TabIndex = 10;
@@ -91,7 +92,7 @@
             buscar.AutoSize = true;
             buscar.BackColor = Color.Transparent;
             buscar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            buscar.Location = new Point(34, 103);
+            buscar.Location = new Point(12, 76);
             buscar.Name = "buscar";
             buscar.Size = new Size(170, 30);
             buscar.TabIndex = 9;
@@ -109,11 +110,24 @@
             label2.TabIndex = 8;
             label2.Text = "Menú Biblioteca";
             // 
+            // Salir
+            // 
+            Salir.AutoSize = true;
+            Salir.BackColor = Color.Transparent;
+            Salir.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            Salir.Location = new Point(12, 209);
+            Salir.Name = "Salir";
+            Salir.Size = new Size(233, 30);
+            Salir.TabIndex = 14;
+            Salir.Text = "5) Salir del Programa";
+            Salir.Click += Salir_Click;
+            // 
             // MenuBiblio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(571, 256);
+            Controls.Add(Salir);
             Controls.Add(pictureBox1);
             Controls.Add(Modulopretamos);
             Controls.Add(libreria);
@@ -121,6 +135,7 @@
             Controls.Add(buscar);
             Controls.Add(label2);
             Name = "MenuBiblio";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Biblotecario";
             Load += Biblotecario_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -136,5 +151,6 @@
         private Label gestionuser;
         private Label buscar;
         private Label label2;
+        private Label Salir;
     }
 }
