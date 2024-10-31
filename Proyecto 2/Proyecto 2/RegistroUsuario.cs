@@ -39,7 +39,7 @@ namespace Proyecto_2
                 MessageBox.Show("Por favor, complete toda la información.");
                 return;
             }
-            User.GuardarUsuario(usuario, contraseña, rol);
+            User.Instancia.GuardarUsuario(usuario, contraseña, rol);
         }
     }
 }

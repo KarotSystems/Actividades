@@ -21,14 +21,17 @@ namespace Proyecto_2
         {
             string usuario = txtUsuario.Text;
             string contraseña = txtContraseña.Text;
-            User usuarioAutenticado = User.AutenticarUsuario(usuario, contraseña);
+
+            // Autenticar usuario usando el Singleton
+            User usuarioAutenticado = User.Instancia.AutenticarUsuario(usuario, contraseña);
 
             if (usuarioAutenticado != null)
             {
-                Inicio inicio = new Inicio();
-                inicio.Close();
+                this.Hide(); // Oculta el formulario de login
+
+                // Redirigir al formulario correspondiente según el rol
                 if (usuarioAutenticado.Rol == "Lector")
-                {     
+                {
                     Menu lectorForm = new Menu();
                     lectorForm.Show();
                 }
@@ -37,13 +40,11 @@ namespace Proyecto_2
                     MenuBiblio biblioForm = new MenuBiblio();
                     biblioForm.Show();
                 }
-                this.Hide();
             }
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos. Por favor, intente de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

@@ -9,15 +9,32 @@ namespace Proyecto_2
 {
     public class User
     {
+        private static User instancia;
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
         public string Rol { get; set; }
 
         public static List<User> listaUsuarios = new List<User>();
-        static User()
+
+        // Propiedad para retornar informacion
+        public static User Instancia
         {
-            listaUsuarios.Add(new User("Mario", "A001", "Bibliotecario"));
-            listaUsuarios.Add(new User("Mabel", "B001", "Lector"));
+            get
+            {
+                if (instancia == null)
+                {
+                    instancia = new User();
+                }
+                return instancia;
+            }
+        }
+        private User()
+        {
+            listaUsuarios = new List<User>
+            {
+            new User("Mario", "A001", "Bibliotecario"),
+            new User("Mabel", "B001", "Lector")
+            };
         }
         public User(string usuario, string contraseña, string rol)
         {
@@ -25,13 +42,13 @@ namespace Proyecto_2
             Contraseña = contraseña;
             Rol = rol;
         }
-        public static void GuardarUsuario(string nombre, string contraseña, string rol)
+        public void GuardarUsuario(string nombre, string contraseña, string rol)
         {
             User nuevoUsuario = new User(nombre, contraseña, rol);
             listaUsuarios.Add(nuevoUsuario);
             MessageBox.Show($"Usuario: {nombre}\nContraseña: {contraseña}\nRol: {rol}", "Datos Guardados", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public static User AutenticarUsuario(string nombre, string contraseña)
+        public User AutenticarUsuario(string nombre, string contraseña)
         {
             foreach (User user in listaUsuarios)
             {

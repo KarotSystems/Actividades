@@ -39,6 +39,8 @@
             Registro = new Button();
             RpLector = new RadioButton();
             RpBiblio = new RadioButton();
+            btnAgregar = new Button();
+            rchtxtLibros = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -107,17 +109,17 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(291, 22);
+            pictureBox1.Location = new Point(258, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(251, 215);
+            pictureBox1.Size = new Size(183, 215);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // Registro
             // 
-            Registro.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Registro.Location = new Point(393, 243);
+            Registro.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            Registro.Location = new Point(279, 240);
             Registro.Name = "Registro";
             Registro.Size = new Size(149, 49);
             Registro.TabIndex = 12;
@@ -149,12 +151,32 @@
             RpBiblio.Text = "Bibliotecario";
             RpBiblio.UseVisualStyleBackColor = true;
             // 
+            // btnAgregar
+            // 
+            btnAgregar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            btnAgregar.Location = new Point(486, 240);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(149, 47);
+            btnAgregar.TabIndex = 36;
+            btnAgregar.Text = "Borrar User";
+            btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // rchtxtLibros
+            // 
+            rchtxtLibros.Location = new Point(447, 9);
+            rchtxtLibros.Name = "rchtxtLibros";
+            rchtxtLibros.Size = new Size(220, 218);
+            rchtxtLibros.TabIndex = 35;
+            rchtxtLibros.Text = "";
+            // 
             // RegistroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 191, 230);
-            ClientSize = new Size(576, 304);
+            ClientSize = new Size(679, 300);
+            Controls.Add(btnAgregar);
+            Controls.Add(rchtxtLibros);
             Controls.Add(RpBiblio);
             Controls.Add(RpLector);
             Controls.Add(Registro);
@@ -184,5 +206,7 @@
         private Button Registro;
         private RadioButton RpLector;
         private RadioButton RpBiblio;
+        private Button btnAgregar;
+        private RichTextBox rchtxtLibros;
     }
 }
