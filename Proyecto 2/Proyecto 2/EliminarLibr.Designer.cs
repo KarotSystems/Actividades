@@ -34,18 +34,19 @@
             TxtISBN = new TextBox();
             label4 = new Label();
             label1 = new Label();
-            richTextBox1 = new RichTextBox();
+            rchtxtLibros = new RichTextBox();
             SuspendLayout();
             // 
             // btnBorrar
             // 
             btnBorrar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            btnBorrar.Location = new Point(103, 165);
+            btnBorrar.Location = new Point(36, 165);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(150, 40);
             btnBorrar.TabIndex = 22;
             btnBorrar.Text = "Borrar Libro";
             btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // Regresar
             // 
@@ -60,11 +61,12 @@
             Regresar.Size = new Size(68, 34);
             Regresar.TabIndex = 35;
             Regresar.UseVisualStyleBackColor = false;
+            Regresar.Click += Regresar_Click;
             // 
             // TxtISBN
             // 
             TxtISBN.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtISBN.Location = new Point(103, 65);
+            TxtISBN.Location = new Point(14, 96);
             TxtISBN.Name = "TxtISBN";
             TxtISBN.Size = new Size(196, 30);
             TxtISBN.TabIndex = 34;
@@ -83,26 +85,27 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            label1.Location = new Point(126, 9);
+            label1.Location = new Point(91, 4);
             label1.Name = "label1";
-            label1.Size = new Size(162, 30);
+            label1.Size = new Size(153, 30);
             label1.TabIndex = 32;
-            label1.Text = "Eliminar  Libro";
+            label1.Text = "Eliminar Libro";
             // 
-            // richTextBox1
+            // rchtxtLibros
             // 
-            richTextBox1.Location = new Point(313, 12);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(234, 193);
-            richTextBox1.TabIndex = 36;
-            richTextBox1.Text = "";
+            rchtxtLibros.Location = new Point(259, 12);
+            rchtxtLibros.Name = "rchtxtLibros";
+            rchtxtLibros.Size = new Size(234, 193);
+            rchtxtLibros.TabIndex = 36;
+            rchtxtLibros.Text = "";
             // 
             // EliminarLibr
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(559, 219);
-            Controls.Add(richTextBox1);
+            BackColor = Color.FromArgb(64, 64, 237);
+            ClientSize = new Size(500, 219);
+            Controls.Add(rchtxtLibros);
             Controls.Add(Regresar);
             Controls.Add(TxtISBN);
             Controls.Add(label4);
@@ -122,6 +125,6 @@
         private TextBox TxtISBN;
         private Label label4;
         private Label label1;
-        private RichTextBox richTextBox1;
+        private RichTextBox rchtxtLibros;
     }
 }

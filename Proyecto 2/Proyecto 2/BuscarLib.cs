@@ -27,15 +27,24 @@ namespace Proyecto_2
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string ISBN = TxtISBN.Text;
-
             // Buscar el libro por ISBN en el inventario de la biblioteca
             var libroEncontrado = Biblioteca.Instancia.inventario.FirstOrDefault(libro => libro.ISBN == ISBN);
 
-            // Si el libro se encuentra, muestra su información en el RichTextBox
+            // Si el libro se encuentra, muestra su información
             if (libroEncontrado != null)
             {
-                rchtxtLibros.Clear();
-                rchtxtLibros.AppendText($"Título: {libroEncontrado.Titulo}, Autor: {libroEncontrado.Autor}, ISBN: {libroEncontrado.ISBN}, Género: {libroEncontrado.Genero}, Disponibilidad: {libroEncontrado.Disponible}\n");
+                MessageBox.Show("Se ha encontrado el libro", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lbtitulo.Visible = Enabled;
+                lbautor.Visible = Enabled;
+                lbisbn.Visible = Enabled;
+                lbgenero.Visible = Enabled;
+                lbdisponible.Visible = Enabled;
+
+                lbtitulo.Text = libroEncontrado.Titulo.ToString();
+                lbautor.Text = libroEncontrado.Autor.ToString();
+                lbisbn.Text = libroEncontrado.ISBN.ToString();
+                lbgenero.Text = libroEncontrado.Genero.ToString();
+                lbdisponible.Text = libroEncontrado.EstadoDisponible.ToString();
             }
             else
             {

@@ -16,6 +16,12 @@ namespace Proyecto_2
         public string Genero { get; set; }
         public bool Disponible { get; set; }
 
+        // Propiedad que devuelve "Disponible" o "Prestado" según el valor de Disponible
+        public string EstadoDisponible
+        {
+            get { return Disponible ? "Disponible" : "Prestado"; }
+        }
+
         // Constructor de la clase Libro que asigna los valores al crear un nuevo objeto
         public Libro(string titulo, string autor, string isbn, string genero)
         {
@@ -29,8 +35,7 @@ namespace Proyecto_2
         // Método para mostrar la información del libro en un cuadro de mensaje
         public void MostrarInformacion()
         {
-            // Muestra un MessageBox con los detalles del libro (título, autor, ISBN, género y disponibilidad)
-            MessageBox.Show($"Título: {Titulo}, Autor: {Autor}, ISBN: {ISBN}, Género: {Genero}, Disponible: {Disponible}","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show($"Título: {Titulo}, Autor: {Autor}, ISBN: {ISBN}, Género: {Genero}, Disponible: {EstadoDisponible}","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 

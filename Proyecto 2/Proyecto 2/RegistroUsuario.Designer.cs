@@ -33,22 +33,21 @@
             label1 = new Label();
             txtContraseña = new TextBox();
             txtUsuario = new TextBox();
-            label6 = new Label();
             label3 = new Label();
-            pictureBox1 = new PictureBox();
             Registro = new Button();
             RpLector = new RadioButton();
             RpBiblio = new RadioButton();
-            btnAgregar = new Button();
-            rchtxtLibros = new RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            btnBorrar = new Button();
+            rchtxtUser = new RichTextBox();
+            Regresar = new Button();
+            btnEditar = new Button();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("MV Boli", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 183);
+            label2.Location = new Point(12, 143);
             label2.Name = "label2";
             label2.Size = new Size(146, 31);
             label2.TabIndex = 7;
@@ -58,7 +57,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("MV Boli", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 123);
+            label1.Location = new Point(12, 69);
             label1.Name = "label1";
             label1.Size = new Size(102, 31);
             label1.TabIndex = 6;
@@ -66,30 +65,17 @@
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(12, 214);
+            txtContraseña.Location = new Point(12, 177);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(231, 23);
             txtContraseña.TabIndex = 5;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(12, 157);
+            txtUsuario.Location = new Point(12, 103);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(231, 23);
             txtUsuario.TabIndex = 4;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.FlatStyle = FlatStyle.Flat;
-            label6.Font = new Font("Lucida Handwriting", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(12, 9);
-            label6.Name = "label6";
-            label6.Size = new Size(231, 90);
-            label6.TabIndex = 9;
-            label6.Text = "Libreria\r\nSan Pedro";
             // 
             // label3
             // 
@@ -98,32 +84,20 @@
             label3.FlatStyle = FlatStyle.Popup;
             label3.Font = new Font("Lucida Handwriting", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(12, 9);
+            label3.Location = new Point(74, -1);
             label3.Name = "label3";
-            label3.Size = new Size(231, 90);
+            label3.Size = new Size(414, 45);
             label3.TabIndex = 10;
-            label3.Text = "Libreria\r\nSan Pedro";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(258, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(183, 215);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
+            label3.Text = "Libreria San Pedro";
             // 
             // Registro
             // 
             Registro.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            Registro.Location = new Point(279, 240);
+            Registro.Location = new Point(12, 252);
             Registro.Name = "Registro";
-            Registro.Size = new Size(149, 49);
+            Registro.Size = new Size(174, 49);
             Registro.TabIndex = 12;
-            Registro.Text = "Registrar";
+            Registro.Text = "Registrar User";
             Registro.UseVisualStyleBackColor = true;
             Registro.Click += Registro_Click;
             // 
@@ -131,7 +105,7 @@
             // 
             RpLector.AutoSize = true;
             RpLector.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RpLector.Location = new Point(12, 253);
+            RpLector.Location = new Point(12, 217);
             RpLector.Name = "RpLector";
             RpLector.Size = new Size(83, 29);
             RpLector.TabIndex = 13;
@@ -143,7 +117,7 @@
             // 
             RpBiblio.AutoSize = true;
             RpBiblio.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RpBiblio.Location = new Point(106, 253);
+            RpBiblio.Location = new Point(106, 217);
             RpBiblio.Name = "RpBiblio";
             RpBiblio.Size = new Size(137, 29);
             RpBiblio.TabIndex = 14;
@@ -151,45 +125,71 @@
             RpBiblio.Text = "Bibliotecario";
             RpBiblio.UseVisualStyleBackColor = true;
             // 
-            // btnAgregar
+            // btnBorrar
             // 
-            btnAgregar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            btnAgregar.Location = new Point(486, 240);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(149, 47);
-            btnAgregar.TabIndex = 36;
-            btnAgregar.Text = "Borrar User";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnBorrar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            btnBorrar.Location = new Point(363, 253);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(149, 47);
+            btnBorrar.TabIndex = 36;
+            btnBorrar.Text = "Borrar User";
+            btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
             // 
-            // rchtxtLibros
+            // rchtxtUser
             // 
-            rchtxtLibros.Location = new Point(447, 9);
-            rchtxtLibros.Name = "rchtxtLibros";
-            rchtxtLibros.Size = new Size(220, 218);
-            rchtxtLibros.TabIndex = 35;
-            rchtxtLibros.Text = "";
+            rchtxtUser.Location = new Point(266, 57);
+            rchtxtUser.Name = "rchtxtUser";
+            rchtxtUser.Size = new Size(246, 189);
+            rchtxtUser.TabIndex = 35;
+            rchtxtUser.Text = "";
+            // 
+            // Regresar
+            // 
+            Regresar.BackColor = Color.Transparent;
+            Regresar.BackgroundImage = (Image)resources.GetObject("Regresar.BackgroundImage");
+            Regresar.BackgroundImageLayout = ImageLayout.Stretch;
+            Regresar.FlatAppearance.BorderSize = 0;
+            Regresar.FlatStyle = FlatStyle.Flat;
+            Regresar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            Regresar.Location = new Point(0, -1);
+            Regresar.Name = "Regresar";
+            Regresar.Size = new Size(68, 34);
+            Regresar.TabIndex = 37;
+            Regresar.UseVisualStyleBackColor = false;
+            Regresar.Click += Regresar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            btnEditar.Location = new Point(192, 252);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(165, 47);
+            btnEditar.TabIndex = 38;
+            btnEditar.Text = "Editar User";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // RegistroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 191, 230);
-            ClientSize = new Size(679, 300);
-            Controls.Add(btnAgregar);
-            Controls.Add(rchtxtLibros);
+            ClientSize = new Size(528, 311);
+            Controls.Add(btnEditar);
+            Controls.Add(Regresar);
+            Controls.Add(btnBorrar);
+            Controls.Add(rchtxtUser);
             Controls.Add(RpBiblio);
             Controls.Add(RpLector);
             Controls.Add(Registro);
-            Controls.Add(pictureBox1);
             Controls.Add(label3);
-            Controls.Add(label6);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
             Name = "RegistroUsuario";
             Text = "Registro";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,13 +200,13 @@
         private Label label1;
         private TextBox txtContraseña;
         private TextBox txtUsuario;
-        private Label label6;
         private Label label3;
-        private PictureBox pictureBox1;
         private Button Registro;
         private RadioButton RpLector;
         private RadioButton RpBiblio;
-        private Button btnAgregar;
-        private RichTextBox rchtxtLibros;
+        private Button btnBorrar;
+        private RichTextBox rchtxtUser;
+        private Button Regresar;
+        private Button btnEditar;
     }
 }

@@ -33,7 +33,9 @@ namespace Proyecto_2
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Inicio inicio = new Inicio();
+            inicio.Show();
         }
     }
 }

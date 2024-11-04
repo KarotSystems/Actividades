@@ -27,7 +27,6 @@ namespace Proyecto_2
                 return instancia;
             }
         }
-
         private Biblioteca() { } // Constructor privado para evitar instancias adicionales
 
         // Métodos de Biblioteca (AgregarLibro, EliminarLibro, etc.)
@@ -43,14 +42,13 @@ namespace Proyecto_2
                 MessageBox.Show("Error: ISBN ya registrado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public void EliminarLibro(List<Libro> inventario, string isbn)
+        public void EliminarLibro(string isbn)
         {
             var libro = inventario.Find(l => l.ISBN == isbn);
             if (libro != null)
             {
                 inventario.Remove(libro);
-                MessageBox.Show($"Libro con ISBN {isbn} eliminado correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El libro ha sido eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

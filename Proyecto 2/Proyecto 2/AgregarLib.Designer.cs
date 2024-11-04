@@ -50,7 +50,7 @@
             // 
             rdbtnDisponibildad.AutoSize = true;
             rdbtnDisponibildad.Font = new Font("Comic Sans MS", 12F);
-            rdbtnDisponibildad.Location = new Point(168, 226);
+            rdbtnDisponibildad.Location = new Point(185, 228);
             rdbtnDisponibildad.Name = "rdbtnDisponibildad";
             rdbtnDisponibildad.Size = new Size(105, 27);
             rdbtnDisponibildad.TabIndex = 30;
@@ -63,7 +63,7 @@
             TxtGenero.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtGenero.Location = new Point(94, 182);
             TxtGenero.Name = "TxtGenero";
-            TxtGenero.Size = new Size(196, 30);
+            TxtGenero.Size = new Size(185, 30);
             TxtGenero.TabIndex = 29;
             // 
             // TxtISBN
@@ -71,7 +71,7 @@
             TxtISBN.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtISBN.Location = new Point(94, 138);
             TxtISBN.Name = "TxtISBN";
-            TxtISBN.Size = new Size(196, 30);
+            TxtISBN.Size = new Size(185, 30);
             TxtISBN.TabIndex = 28;
             // 
             // TxtAutor
@@ -79,7 +79,7 @@
             TxtAutor.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtAutor.Location = new Point(94, 93);
             TxtAutor.Name = "TxtAutor";
-            TxtAutor.Size = new Size(196, 30);
+            TxtAutor.Size = new Size(185, 30);
             TxtAutor.TabIndex = 27;
             // 
             // label6
@@ -135,7 +135,7 @@
             // btnEditar
             // 
             btnEditar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            btnEditar.Location = new Point(160, 265);
+            btnEditar.Location = new Point(166, 265);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(113, 73);
             btnEditar.TabIndex = 20;
@@ -146,7 +146,7 @@
             // btnAgregar
             // 
             btnAgregar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            btnAgregar.Location = new Point(12, 265);
+            btnAgregar.Location = new Point(25, 265);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(117, 73);
             btnAgregar.TabIndex = 19;
@@ -158,7 +158,7 @@
             // 
             rchtxtLibros.Location = new Point(296, 6);
             rchtxtLibros.Name = "rchtxtLibros";
-            rchtxtLibros.Size = new Size(246, 324);
+            rchtxtLibros.Size = new Size(260, 332);
             rchtxtLibros.TabIndex = 18;
             rchtxtLibros.Text = "";
             // 
@@ -167,14 +167,14 @@
             Txttitulo.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Txttitulo.Location = new Point(94, 44);
             Txttitulo.Name = "Txttitulo";
-            Txttitulo.Size = new Size(196, 30);
+            Txttitulo.Size = new Size(185, 30);
             Txttitulo.TabIndex = 17;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            label1.Location = new Point(136, 3);
+            label1.Location = new Point(105, 3);
             label1.Name = "label1";
             label1.Size = new Size(154, 30);
             label1.TabIndex = 16;
@@ -200,7 +200,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(101, 165, 230);
-            ClientSize = new Size(547, 342);
+            ClientSize = new Size(566, 342);
             Controls.Add(Regresar);
             Controls.Add(rdbtnDisponibildad);
             Controls.Add(TxtGenero);
@@ -219,7 +219,6 @@
             Name = "AgregarLib";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgregarLib";
-            MouseClick += AgregarLib_MouseClick;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,5 +239,6 @@
         private TextBox Txttitulo;
         private Label label1;
         private Button Regresar;
+        private Button btnBorrar;
     }
 }

@@ -17,7 +17,6 @@ namespace Proyecto_2
             InitializeComponent();
             ActualizarListaLibros(); // Muestra los libros guardados en el RichTextBox al cargar
         }
-
         // Método para agregar un libro
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -26,7 +25,12 @@ namespace Proyecto_2
             string ISBN = TxtISBN.Text;
             string genero = TxtGenero.Text;
             bool disponible = rdbtnDisponibildad.Checked;
-
+            //si el espacio esta vacio, no se puede completar
+            if (string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(ISBN) || string.IsNullOrEmpty(genero))
+            {
+                MessageBox.Show("Por favor, complete toda la información.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             Biblioteca.Instancia.AgregarLibro(titulo, autor, ISBN, genero, disponible);
             ActualizarListaLibros(); // Actualiza el RichTextBox
             LimpiarCampos(); // Limpia los campos de texto
@@ -44,6 +48,7 @@ namespace Proyecto_2
                 libroExistente.Titulo = Txttitulo.Text;
                 libroExistente.Autor = TxtAutor.Text;
                 libroExistente.Genero = TxtGenero.Text;
+                libroExistente.Disponible = rdbtnDisponibildad.Checked;
 
                 // Muestra un mensaje confirmando la edición
                 MessageBox.Show("El libro ha sido editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -56,23 +61,22 @@ namespace Proyecto_2
                 MessageBox.Show("No se encontró un libro con el ISBN especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         // Método para actualizar el RichTextBox con los datos del inventario
         private void ActualizarListaLibros()
         {
             rchtxtLibros.Clear();
             foreach (var libro in Biblioteca.Instancia.inventario)
             {
-                rchtxtLibros.AppendText($"Título: {libro.Titulo}, Autor: {libro.Autor}, ISBN: {libro.ISBN}, Género: {libro.Genero}, Disponibilidad: {libro.Disponible}\n");
+                rchtxtLibros.AppendText($"Título: {libro.Titulo}, Autor: {libro.Autor}, ISBN: {libro.ISBN}, Género: {libro.Genero}, Disponibilidad: {libro.EstadoDisponible}\n\n");
             }
         }
-
         private void LimpiarCampos()
         {
             Txttitulo.Clear();
             TxtAutor.Clear();
             TxtISBN.Clear();
             TxtGenero.Clear();
+            rdbtnDisponibildad.Checked = false;
         }
         //botón Regresar, que cierra la ventana actual y muestra el menú principal
         private void Regresar_Click(object sender, EventArgs e)
@@ -82,8 +86,9 @@ namespace Proyecto_2
             menuBiblio.Show();
         }
 
-        private void AgregarLib_MouseClick(object sender, MouseEventArgs e)
+        private void TxtISBN_TextChanged(object sender, EventArgs e)
         {
+
         }
     }
 }

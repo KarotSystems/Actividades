@@ -22,7 +22,6 @@ namespace Proyecto_2
             AgregarLib agregarLibro = new AgregarLib();
             agregarLibro.Show();
         }
-
         private void buscar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,17 +38,20 @@ namespace Proyecto_2
         private void Modulopretamos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Prestamos preta = new Prestamos();
-            preta.Show();
+            Informes informes = new Informes();
+            informes.Show();
         }
-        private void Biblotecario_Load(object sender, EventArgs e)
+        private void lbBorrarLib_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            EliminarLibr eliminarLibr = new EliminarLibr();
+            eliminarLibr.Show();
         }
-
         private void Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Inicio inicio = new Inicio();
+            inicio.Show();
         }
     }
 }
