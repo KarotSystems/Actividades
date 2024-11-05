@@ -36,17 +36,24 @@ namespace Proyecto_2
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
-            string ISBN = TxtISBN.Text;
-            Lector lectorActual = User.Instancia.Rol();
+            //    string ISBN = TxtISBN.Text;
+            //    Lector lectorActual = User.Instancia.Rol();
 
-            if (lectorActual != null)
-            {
-                Biblioteca.Instancia.SolicitarPrestamo(lectorActual, ISBN);
-            }
-            else
-            {
-                MessageBox.Show("No se ha seleccionado un lector.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    if (lectorActual != null)
+            //    {
+            //        Biblioteca.Instancia.SolicitarPrestamo(lectorActual, ISBN);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se ha seleccionado un lector.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.Show();
         }
     }
 }

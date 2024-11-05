@@ -51,10 +51,11 @@
             Regresar.BackColor = Color.Transparent;
             Regresar.BackgroundImage = (Image)resources.GetObject("Regresar.BackgroundImage");
             Regresar.BackgroundImageLayout = ImageLayout.Stretch;
-            Regresar.FlatAppearance.BorderSize = 0;
+            Regresar.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            Regresar.FlatAppearance.MouseOverBackColor = Color.Cyan;
             Regresar.FlatStyle = FlatStyle.Flat;
             Regresar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            Regresar.Location = new Point(0, -4);
+            Regresar.Location = new Point(-1, -4);
             Regresar.Name = "Regresar";
             Regresar.Size = new Size(68, 34);
             Regresar.TabIndex = 37;
@@ -64,7 +65,7 @@
             // TxtISBN
             // 
             TxtISBN.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtISBN.Location = new Point(106, 54);
+            TxtISBN.Location = new Point(91, 56);
             TxtISBN.Name = "TxtISBN";
             TxtISBN.Size = new Size(196, 30);
             TxtISBN.TabIndex = 36;

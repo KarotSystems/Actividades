@@ -16,5 +16,12 @@ namespace Proyecto_2
         {
             InitializeComponent();
         }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.Show();
+        }
     }
 }

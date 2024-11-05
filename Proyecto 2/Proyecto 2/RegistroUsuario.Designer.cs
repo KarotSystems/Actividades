@@ -149,7 +149,8 @@
             Regresar.BackColor = Color.Transparent;
             Regresar.BackgroundImage = (Image)resources.GetObject("Regresar.BackgroundImage");
             Regresar.BackgroundImageLayout = ImageLayout.Stretch;
-            Regresar.FlatAppearance.BorderSize = 0;
+            Regresar.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            Regresar.FlatAppearance.MouseOverBackColor = Color.Cyan;
             Regresar.FlatStyle = FlatStyle.Flat;
             Regresar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
             Regresar.Location = new Point(0, -1);
@@ -175,7 +176,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 191, 230);
-            ClientSize = new Size(528, 311);
+            ClientSize = new Size(637, 380);
             Controls.Add(btnEditar);
             Controls.Add(Regresar);
             Controls.Add(btnBorrar);
@@ -189,6 +190,7 @@
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
             Name = "RegistroUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registro";
             ResumeLayout(false);
             PerformLayout();

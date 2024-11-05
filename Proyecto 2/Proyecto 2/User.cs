@@ -74,8 +74,13 @@ namespace Proyecto_2
             var usuario = ListaUsuarios.FirstOrDefault(u => u.Usuario == nombre && u.Contraseña == contraseña);
             if (usuario != null)
             {
+                MessageBox.Show("El usuario ha sido eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ListaUsuarios.Remove(usuario);
                 return true;
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado el usuario ha eliminar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             return false;
         }

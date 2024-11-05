@@ -185,7 +185,8 @@
             Regresar.BackColor = Color.Transparent;
             Regresar.BackgroundImage = (Image)resources.GetObject("Regresar.BackgroundImage");
             Regresar.BackgroundImageLayout = ImageLayout.Stretch;
-            Regresar.FlatAppearance.BorderSize = 0;
+            Regresar.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            Regresar.FlatAppearance.MouseOverBackColor = Color.Cyan;
             Regresar.FlatStyle = FlatStyle.Flat;
             Regresar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
             Regresar.Location = new Point(-2, 1);

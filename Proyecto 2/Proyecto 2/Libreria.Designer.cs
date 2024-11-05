@@ -36,6 +36,10 @@
             rchtxtLibros = new RichTextBox();
             label1 = new Label();
             btnBuscar = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // Regresar
@@ -44,13 +48,16 @@
             Regresar.BackgroundImage = (Image)resources.GetObject("Regresar.BackgroundImage");
             Regresar.BackgroundImageLayout = ImageLayout.Stretch;
             Regresar.FlatAppearance.BorderSize = 0;
+            Regresar.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 192, 192);
+            Regresar.FlatAppearance.MouseOverBackColor = Color.Teal;
             Regresar.FlatStyle = FlatStyle.Flat;
             Regresar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            Regresar.Location = new Point(1, 11);
+            Regresar.Location = new Point(-2, -1);
             Regresar.Name = "Regresar";
-            Regresar.Size = new Size(68, 34);
+            Regresar.Size = new Size(68, 41);
             Regresar.TabIndex = 37;
             Regresar.UseVisualStyleBackColor = false;
+            Regresar.Click += Regresar_Click;
             // 
             // TxtISBN
             // 
@@ -72,12 +79,16 @@
             // 
             // btnSolicitar
             // 
+            btnSolicitar.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 192, 192);
+            btnSolicitar.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnSolicitar.FlatStyle = FlatStyle.Flat;
             btnSolicitar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            btnSolicitar.Location = new Point(12, 186);
+            btnSolicitar.Location = new Point(8, 262);
             btnSolicitar.Name = "btnSolicitar";
-            btnSolicitar.Size = new Size(260, 49);
+            btnSolicitar.Size = new Size(260, 73);
             btnSolicitar.TabIndex = 34;
             btnSolicitar.Text = "Solicitar Libro";
+            btnSolicitar.TextAlign = ContentAlignment.MiddleLeft;
             btnSolicitar.UseVisualStyleBackColor = true;
             btnSolicitar.Click += btnSolicitar_Click;
             // 
@@ -93,7 +104,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            label1.Location = new Point(108, 13);
+            label1.Location = new Point(112, 4);
             label1.Name = "label1";
             label1.Size = new Size(160, 30);
             label1.TabIndex = 32;
@@ -101,14 +112,38 @@
             // 
             // btnBuscar
             // 
+            btnBuscar.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 192, 192);
+            btnBuscar.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            btnBuscar.Location = new Point(12, 119);
+            btnBuscar.Location = new Point(8, 159);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(260, 44);
+            btnBuscar.Size = new Size(260, 72);
             btnBuscar.TabIndex = 38;
             btnBuscar.Text = "Buscar Libro";
+            btnBuscar.TextAlign = ContentAlignment.MiddleLeft;
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(193, 262);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 73);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 39;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(193, 159);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(100, 74);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 40;
+            pictureBox2.TabStop = false;
             // 
             // Libreria
             // 
@@ -116,6 +151,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(101, 230, 211);
             ClientSize = new Size(561, 358);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(btnBuscar);
             Controls.Add(Regresar);
             Controls.Add(TxtISBN);
@@ -124,7 +161,10 @@
             Controls.Add(rchtxtLibros);
             Controls.Add(label1);
             Name = "Libreria";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion Libros";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,5 +178,7 @@
         private RichTextBox rchtxtLibros;
         private Label label1;
         private Button btnBuscar;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
