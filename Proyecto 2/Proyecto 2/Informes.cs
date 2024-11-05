@@ -16,5 +16,11 @@ namespace Proyecto_2
         {
             InitializeComponent();
         }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            MenuBiblio menuBiblio = new MenuBiblio();
+            menuBiblio.Show();
+        }
     }
 }

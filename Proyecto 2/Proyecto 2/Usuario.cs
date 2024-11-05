@@ -28,7 +28,6 @@ namespace Proyecto_2
             if (usuarioAutenticado != null)
             {
                 this.Hide(); // Oculta el formulario de login
-
                 // Redirigir al formulario correspondiente según el rol
                 if (usuarioAutenticado.Rol == "Lector")
                 {

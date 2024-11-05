@@ -13,14 +13,36 @@ namespace Proyecto_2
 {
     public partial class RegistroUsuario : Form
     {
-        public List<User> listaUsuarios = new List<User>();
         public RegistroUsuario()
         {
             InitializeComponent();
-            label6.BackColor = Color.Transparent;
-            label3.BringToFront();
+            ActualizarLista();
         }
-
+        //actualiza el richtexbox
+        private void ActualizarLista()
+        {
+            rchtxtUser.Clear();
+            foreach (var uss in User.Instancia.ListaUsuarios)
+            {
+                rchtxtUser.AppendText($"Usuario: {uss.Usuario}, Contraseña: {uss.Contraseña}, Rol: {uss.Rol}\n");
+            }
+        }
+        //limpia los campos
+        private void LimpiarCampo()
+        {
+            txtUsuario.Clear();
+            txtContraseña.Clear();
+            RpBiblio.Checked = false;
+            RpLector.Checked = false;
+        }
+        //Boton regreso
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuBiblio menuBiblio = new MenuBiblio();
+            menuBiblio.Show();
+        }
+        //guarda usuarios en la lista
         private void Registro_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text;
@@ -40,6 +62,46 @@ namespace Proyecto_2
                 return;
             }
             User.Instancia.GuardarUsuario(usuario, contraseña, rol);
+            ActualizarLista();
+            LimpiarCampo();
+        }
+        //boton editar los datos de la lista
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string usuario = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
+            string rol = "";
+            if (RpLector.Checked)
+            {
+                rol = "Lector";
+            }
+            else if (RpBiblio.Checked)
+            {
+                rol = "Bibliotecario";
+            }
+            var usuarioExistente = User.Instancia.ListaUsuarios.FirstOrDefault(u => u.Usuario == usuario);
+
+            if (usuarioExistente != null)
+            {
+                usuarioExistente.Contraseña = contraseña;
+                usuarioExistente.Rol = rol;
+                MessageBox.Show("El usuario ha sido editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se encontró un usuario con el nombre especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            ActualizarLista();
+            LimpiarCampo();
+        }
+        //boton borrar los datos de la lista
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            string usuario = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
+            User.Instancia.EliminarUsuario(usuario, contraseña);
+            ActualizarLista();
+            LimpiarCampo();
         }
     }
 }

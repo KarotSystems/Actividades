@@ -16,40 +16,47 @@ namespace Proyecto_2
         {
             InitializeComponent();
         }
-        private void libreria_Click(object sender, EventArgs e)
+
+        private void btnGestionLib_Click(object sender, EventArgs e)
         {
             this.Hide();
             AgregarLib agregarLibro = new AgregarLib();
             agregarLibro.Show();
         }
 
-        private void buscar_Click(object sender, EventArgs e)
+        private void btnPretamos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Informes informes = new Informes();
+            informes.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inicio inicio = new Inicio();
+            inicio.Show();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EliminarLibr eliminarLibr = new EliminarLibr();
+            eliminarLibr.Show();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.Hide();
             BuscarLib buscarlb = new BuscarLib();
             buscarlb.Show();
         }
 
-        private void gestionuser_Click(object sender, EventArgs e)
+        private void btnGestionUsser_Click(object sender, EventArgs e)
         {
             this.Hide();
             RegistroUsuario gestion = new RegistroUsuario();
             gestion.Show();
-        }
-        private void Modulopretamos_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Prestamos preta = new Prestamos();
-            preta.Show();
-        }
-        private void Biblotecario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

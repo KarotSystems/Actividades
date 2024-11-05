@@ -17,23 +17,25 @@ namespace Proyecto_2
             InitializeComponent();
         }
 
-        private void libreria_Click(object sender, EventArgs e)
+        private void btnGestionLib_Click(object sender, EventArgs e)
         {
             this.Hide();
             Libreria agregarLibro = new Libreria();
             agregarLibro.Show();
         }
 
-        private void Presta_Click(object sender, EventArgs e)
+        private void btnPretamos_Click(object sender, EventArgs e)
         {
             this.Hide();
             Prestamos pres = new Prestamos();
             pres.Show();
         }
 
-        private void Salir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Inicio inicio = new Inicio();
+            inicio.Show();
         }
     }
 }
