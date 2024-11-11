@@ -20,8 +20,8 @@ namespace Proyecto_2
         private void Regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MenuBiblio menuBiblio = new MenuBiblio();
-            menuBiblio.Show();
+            Menu menu = new Menu();
+            menu.Show();
         }
     }
 }

@@ -41,6 +41,8 @@
             rchtxtUser = new RichTextBox();
             Regresar = new Button();
             btnEditar = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -171,12 +173,23 @@
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(526, 16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(252, 281);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 39;
+            pictureBox1.TabStop = false;
+            // 
             // RegistroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 191, 230);
-            ClientSize = new Size(637, 380);
+            ClientSize = new Size(790, 309);
+            Controls.Add(pictureBox1);
             Controls.Add(btnEditar);
             Controls.Add(Regresar);
             Controls.Add(btnBorrar);
@@ -192,6 +205,7 @@
             Name = "RegistroUsuario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registro";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,5 +224,6 @@
         private RichTextBox rchtxtUser;
         private Button Regresar;
         private Button btnEditar;
+        private PictureBox pictureBox1;
     }
 }
